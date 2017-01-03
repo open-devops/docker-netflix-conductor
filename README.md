@@ -16,8 +16,8 @@ Browse to [http://localhost:3000](http://localhost:3000) for the UI and [http://
 
 ## Building from Source
 Clone the repo:
-`git clone https://github.com/devopsopen/docker-netflix-conductor.git`
+`git clone https://github.com/open-devops/docker-netflix-conductor.git`
 
 Build the image:
-`docker build -t netflix-conductor .`
+`docker build -t devopsopen/netflix-conductor .`
 
