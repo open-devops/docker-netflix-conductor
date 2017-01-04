@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -z "$http_proxy_host" ]; then
-cat <<EOT >> gradle.properties
+cat <<EOT >> /netflix/conductor/gradle.properties
 systemProp.http.proxyHost=$http_proxy_host
 systemProp.http.proxyPort=$http_proxy_port
 systemProp.http.noProxyHosts=$no_proxy
