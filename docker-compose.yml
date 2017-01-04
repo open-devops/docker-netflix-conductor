@@ -1,0 +1,27 @@
+#
+# Netflix Conductor Docker Compose file for Open DevOps Pipeline
+#
+# VERSION : 1.0
+#
+version: '2'
+
+services:
+  conductor:
+    image: devopsopen/docker-netflix-conductor
+    ports:
+      - "3000:3000"
+      - "9080:8080"
+    environment:
+      - JAVA_OPTS=-Dhttp.proxyHost=${http_proxy_host}
+                  -Dhttp.proxyPort=${http_proxy_port} 
+                  -Dhttps.proxyHost=${https_proxy_host} 
+                  -Dhttps.proxyPort=${https_proxy_port}
+                  -Duser.timezone=Asia/Shanghai
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - no_proxy=${no_proxy}
+      - http_proxy_host=${http_proxy_host}
+      - http_proxy_port=${http_proxy_port}
+      - https_proxy_host=${https_proxy_host}
+      - https_proxy_port=${https_proxy_port}
+    restart: never
